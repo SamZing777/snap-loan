@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-j#vw9mj23drw_l+3ptv59)uyn2o!3c9z=w=ou2pm(a-tnnmvji
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['snap-loan.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['snaploan.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
