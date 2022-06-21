@@ -10,7 +10,7 @@ coreapi==2.3.3
 coreschema==0.0.4
 cryptography==37.0.2
 defusedxml==0.7.1
-Django==4.0.4
+Django==3.10
 django-allauth==0.50.0
 django-autoslug==1.9.8
 django-cors-headers==3.13.0
