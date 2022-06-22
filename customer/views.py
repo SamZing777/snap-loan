@@ -51,6 +51,6 @@ class BankDetailAPIView(generics.RetrieveUpdateAPIView):
     lookup_fields = ['user']
 
 
-class TopUpSerializer(generics.CreateAPIView):
+class CreateTopUpAPIView(generics.CreateAPIView):
     queryset = TopUp.objects.all()
     serializer_class = TopUpSerializer
