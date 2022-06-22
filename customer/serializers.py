@@ -8,6 +8,13 @@ from .models import (
 )
 
 
+class PaySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Pay
+        fields = '__all__'
+
+
 class CustomerSerializer(serializers.ModelSerializer):
 
     class Meta:

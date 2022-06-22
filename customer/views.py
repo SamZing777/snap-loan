@@ -11,10 +11,16 @@ from .models import (
     )
 
 from .serializers import (
+    PaySerializer,
     CustomerSerializer,
     BankDetailSerializer,
     TopUpSerializer
     )
+
+
+class PayAPIView(generics.CreateAPIView):
+    queryset = Pay.objects.all()
+    serializer_class = PaySerializer
 
 
 class CustomerAPIView(generics.ListAPIView):
