@@ -25,7 +25,11 @@ class CustomerAPIView(generics.ListAPIView):
 class CreateBankDetailAPIView(generics.CreateAPIView):
     queryset = BankDetail.objects.all()
     serializer_class = BankDetailSerializer
-    permission_classes = [permissions.IsAuthenticated,]
+    
+    # permission_classes = [permissions.IsAuthenticated,]
+
+    # def perform_create(self, serializer):
+    #     serializer.save(owner=self.request.user)
 
 
 # class MultipleFieldLookupMixin:
@@ -54,3 +58,7 @@ class BankDetailAPIView(generics.RetrieveUpdateAPIView):
 class CreateTopUpAPIView(generics.CreateAPIView):
     queryset = TopUp.objects.all()
     serializer_class = TopUpSerializer
+    # permission_classes = [permissions.IsAuthenticated,]
+
+    # def perform_create(self, serializer):
+    #     serializer.save(owner=self.request.user)

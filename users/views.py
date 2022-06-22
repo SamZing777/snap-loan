@@ -17,7 +17,7 @@ User = get_user_model()
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    authentication_classes = [authentication.BasicAuthentication,]
+    authentication_classes = [authentication.TokenAuthentication,]
     permission_classes = [permissions.AllowAny,]
 
 
@@ -34,4 +34,4 @@ class LoginAPI(KnoxLoginView):
             login(request, user)
             return super(LoginAPI, self).post(request, format=None)
         else:
-            return Response({"non_field_errors":["unable to log in with provided credentials"]})
+            return Response({"non_field_errors": ["error logging in, log in with correct detail"]})
