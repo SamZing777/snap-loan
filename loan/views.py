@@ -15,6 +15,6 @@ class LoanPeriodAPIView(generics.ListAPIView):
     serializer_class = LoanPeriodSerializer
 
 
-class LoanAPIView(generics.ListCreateAPIView):
+class LoanCreateAPIView(generics.CreateAPIView):
     queryset = Loan.objects.all()
     serializer_class = LoanSerializer

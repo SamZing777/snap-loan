@@ -2,11 +2,11 @@ from django.urls import path
 
 from .views import (
     LoanPeriodAPIView,
-    LoanAPIView
+    LoanCreateAPIView
 )
 
 
 urlpatterns = [
     path('', LoanPeriodAPIView.as_view(), name='loan_period'),
-    path('loan/', LoanAPIView.as_view(), name='loan')
+    path('loan/', LoanCreateAPIView.as_view(), name='loan')
 ]
