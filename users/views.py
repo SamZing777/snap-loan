@@ -18,6 +18,7 @@ class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     authentication_classes = [authentication.BasicAuthentication,]
+    permission_classes = [permissions.AllowAny,]
 
 
 class LoginAPI(KnoxLoginView):
