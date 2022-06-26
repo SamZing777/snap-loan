@@ -18,3 +18,7 @@ class LoanPeriodAPIView(generics.ListAPIView):
 class LoanCreateAPIView(generics.CreateAPIView):
     queryset = Loan.objects.all()
     serializer_class = LoanSerializer
+
+    def peform_create(self, serializer):
+        user = self.request.user
+        serializer.save(user)

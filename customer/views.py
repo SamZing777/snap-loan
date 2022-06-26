@@ -21,6 +21,11 @@ from .serializers import (
 class PayAPIView(generics.CreateAPIView):
     queryset = Pay.objects.all()
     serializer_class = PaySerializer
+    permission_classes = [permissions.IsAuthenticated,]
+
+    def peform_create(self, serializer):
+        user = self.request.user
+        serializer.save(user)
 
 
 class CustomerAPIView(generics.ListAPIView):
@@ -31,11 +36,11 @@ class CustomerAPIView(generics.ListAPIView):
 class CreateBankDetailAPIView(generics.CreateAPIView):
     queryset = BankDetail.objects.all()
     serializer_class = BankDetailSerializer
-    
-    # permission_classes = [permissions.IsAuthenticated,]
+    permission_classes = [permissions.IsAuthenticated,]
 
-    # def perform_create(self, serializer):
-    #     serializer.save(owner=self.request.user)
+    def peform_create(self, serializer):
+        user = self.request.user
+        serializer.save(user)
 
 
 # class MultipleFieldLookupMixin:
@@ -59,12 +64,14 @@ class BankDetailAPIView(generics.RetrieveUpdateAPIView):
     queryset = BankDetail.objects.all()
     serializer_class = BankDetailSerializer
     lookup_fields = ['user']
+    permission_classes = [permissions.IsAuthenticated,]
 
 
 class CreateTopUpAPIView(generics.CreateAPIView):
     queryset = TopUp.objects.all()
     serializer_class = TopUpSerializer
-    # permission_classes = [permissions.IsAuthenticated,]
+    permission_classes = [permissions.IsAuthenticated,]
 
-    # def perform_create(self, serializer):
-    #     serializer.save(owner=self.request.user)
+    def peform_create(self, serializer):
+        user = self.request.user
+        serializer.save(user)
